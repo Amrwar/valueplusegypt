@@ -250,8 +250,8 @@ export const PROJECTS: Project[] = [
 
 export const CONTACT_INFO = {
   address: {
-    en: 'Cairo, Egypt',
-    ar: 'القاهرة، مصر',
+    en: 'Hassan Al-Mamoun St., Al Wafaa WA Al Amal, Nasr City, Cairo Governorate 4442120',
+    ar: 'حسن المأمون، الوفاء والأمل، مدينة نصر، محافظة القاهرة 4442120',
   },
   email: 'valueplusegypt@gmail.com',
   telephone: '+201223967303',
