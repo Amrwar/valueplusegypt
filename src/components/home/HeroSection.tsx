@@ -43,13 +43,13 @@ export default function HeroSection() {
           isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         )}>
           {/* Logo */}
-          <div className="mx-auto mb-8 flex h-16 w-44 items-center justify-center rounded-xl bg-white/10 p-3 backdrop-blur-sm">
+          <div className="mx-auto mb-8 inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 shadow-lg">
             <Image
               src="/images/logo.jpg"
               alt="Value Plus"
               width={160}
               height={50}
-              className="h-auto w-auto max-h-10 object-contain brightness-0 invert"
+              className="h-auto w-auto max-h-10 object-contain"
               priority
             />
           </div>
