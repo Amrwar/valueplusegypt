@@ -59,7 +59,7 @@ const organizationSchema = {
   logo: `${BASE_URL}/images/logo.jpg`,
   description:
     'Leading investment consultancy firm specializing in economic feasibility studies, value engineering, and comprehensive real estate services in Egypt and the Middle East.',
-  foundingLocation: { '@type': 'Place', name: 'Cairo, Egypt' },
+  foundingLocation: { '@type': 'Place', name: 'Cairo, Egypt', hasMap: 'https://maps.app.goo.gl/LDmYysLjwPC4ydKV9' },
   areaServed: ['Egypt', 'Middle East'],
   contactPoint: {
     '@type': 'ContactPoint',

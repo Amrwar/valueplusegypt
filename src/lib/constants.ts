@@ -256,5 +256,5 @@ export const CONTACT_INFO = {
   email: 'valueplusegypt@gmail.com',
   telephone: '+201223967303',
   mobile: '+201223967303',
-  mapsUrl: 'https://maps.google.com/?q=Cairo,Egypt',
+  mapsUrl: 'https://maps.app.goo.gl/LDmYysLjwPC4ydKV9',
 };
