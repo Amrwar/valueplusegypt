@@ -2,9 +2,10 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
-import { FEATURED_SERVICES, SERVICE_ICONS } from '@/lib/constants';
+import { FEATURED_SERVICES, SERVICE_IMAGES } from '@/lib/constants';
 import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/utils';
 
@@ -25,22 +26,31 @@ export default function ServicesOverview() {
             <div
               key={key}
               className={cn(
-                'group rounded-xl border border-navy-100 p-6 transition-all duration-500 hover:border-gold-400 hover:shadow-lg',
+                'group flex flex-col rounded-xl border border-navy-100 overflow-hidden bg-white transition-all duration-500 hover:border-gold-400 hover:shadow-lg',
                 isInView
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8',
               )}
               style={{ transitionDelay: isInView ? `${index * 100}ms` : '0ms' }}
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-navy-50 text-2xl transition-colors group-hover:bg-gold-50">
-                {SERVICE_ICONS[key]}
+              {SERVICE_IMAGES[key] && (
+                <div className="relative h-40 bg-white overflow-hidden">
+                  <Image
+                    src={SERVICE_IMAGES[key]}
+                    alt={t(`services.${key}.title`)}
+                    fill
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              )}
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="mb-2 text-lg font-semibold text-navy-900">
+                  {t(`services.${key}.title`)}
+                </h3>
+                <p className="text-sm leading-relaxed text-navy-600">
+                  {t(`services.${key}.description`)}
+                </p>
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-navy-900">
-                {t(`services.${key}.title`)}
-              </h3>
-              <p className="text-sm leading-relaxed text-navy-600">
-                {t(`services.${key}.description`)}
-              </p>
             </div>
           ))}
         </div>
