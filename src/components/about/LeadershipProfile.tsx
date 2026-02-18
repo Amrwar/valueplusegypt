@@ -30,11 +30,10 @@ export default function LeadershipProfile() {
             <div className="relative md:w-2/5">
               <div className="relative h-80 md:h-full md:min-h-[420px]">
                 <Image
-                  src="/images/president.jpg"
+                  src="/images/president.png"
                   alt={t('leaderName')}
                   fill
                   className="object-cover"
-                  style={{ objectPosition: 'center 80%' }}
                 />
                 {/* Gold accent at bottom on mobile, at side on desktop */}
                 <div className="absolute bottom-0 start-0 h-1 w-full bg-gold-400 md:h-full md:w-1 md:bottom-auto md:end-0 md:start-auto" />
