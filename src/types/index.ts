@@ -21,6 +21,7 @@ export interface Project {
   servicesEn: string[];
   servicesAr: string[];
   category: ProjectCategory;
+  image?: string;
 }
 
 export type ProjectCategory =

@@ -1,4 +1,5 @@
 import { useTranslations, useLocale } from 'next-intl';
+import Image from 'next/image';
 import { Project } from '@/types';
 import { cn } from '@/lib/utils';
 
@@ -27,13 +28,31 @@ export default function ProjectCard({ project, index, isInView }: ProjectCardPro
       )}
       style={{ transitionDelay: isInView ? `${(index % 6) * 80}ms` : '0ms' }}
     >
-      {/* Card top accent */}
-      <div className="h-1.5 bg-gradient-to-r from-navy-900 to-gold-400" />
+      {/* Project image */}
+      {project.image ? (
+        <div className="relative h-48 overflow-hidden">
+          <Image
+            src={project.image}
+            alt={name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent" />
+          <h3 className="absolute bottom-3 start-4 end-4 text-lg font-bold text-white drop-shadow-md">
+            {name}
+          </h3>
+        </div>
+      ) : (
+        <>
+          <div className="h-1.5 bg-gradient-to-r from-navy-900 to-gold-400" />
+          <div className="px-6 pt-6">
+            <h3 className="text-lg font-bold text-navy-900">{name}</h3>
+          </div>
+        </>
+      )}
 
       <div className="p-6">
-        <h3 className="text-lg font-bold text-navy-900">{name}</h3>
-
-        <div className="mt-3 space-y-2 text-sm">
+        <div className="space-y-2 text-sm">
           <div className="flex items-start gap-2">
             <span className="font-medium text-navy-500">{t('client')}:</span>
             <span className="text-navy-700">{client}</span>

@@ -62,6 +62,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Quantity Surveying', 'Initial Cost Estimation'],
     servicesAr: ['أعمال الحصر', 'تقدير التكلفة المبدئية للمشروع'],
     category: 'investment',
+    image: '/images/projects/masrna-el-gedida.png',
   },
   {
     id: '2',
@@ -76,6 +77,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Quantity Surveying', 'Initial Cost Estimation'],
     servicesAr: ['أعمال الحصر', 'تقدير التكلفة المبدئية للمشروع'],
     category: 'investment',
+    image: '/images/projects/calimera.jpg',
   },
 
   // ── Administrative & Commercial (المباني الإدارية والتجارية) ──
@@ -95,6 +97,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '4',
+
     nameEn: 'Housing & Development Bank HQ — Mohandessin',
     nameAr: 'مقر بنك التعمير الإداري - المهندسين',
     clientEn: 'Housing & Development Bank',
@@ -106,6 +109,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Quantity Surveying'],
     servicesAr: ['أعمال الحصر للمشروع'],
     category: 'admin-commercial',
+    image: '/images/projects/bank-hq.jpg',
   },
 
   // ── Educational (المشروعات والمباني التعليمية) ──
@@ -122,6 +126,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Preliminary Studies', 'Concrete Quantity Studies', 'Reinforcement Steel Surveying', 'Detailed Studies', 'Finishing Works Studies'],
     servicesAr: ['الدراسات الأولية', 'دراسات كميات الخرسانات', 'حصر كثافات وكميات حديد التسليح', 'الدراسات التفصيلية', 'دراسات بنود تشطيبات'],
     category: 'educational',
+    image: '/images/projects/auc.webp',
   },
   {
     id: '6',
@@ -136,6 +141,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Detailed Studies', 'Concrete Quantity Studies', 'Reinforcement Steel Surveying', 'Finishing Works Studies'],
     servicesAr: ['الدراسات التفصيلية', 'دراسات كميات الخرسانات', 'حصر كثافات وكميات حديد التسليح', 'دراسات بنود تشطيبات'],
     category: 'educational',
+    image: '/images/projects/arab-academy.jpg',
   },
 
   // ── Medical & Hospitals (المشروعات العلاجية والمستشفيات) ──
@@ -152,6 +158,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Preliminary Studies', 'Concrete Quantity Studies', 'Reinforcement Steel Surveying', 'Detailed Studies', 'Finishing Works Studies'],
     servicesAr: ['الدراسات الأولية', 'دراسات كميات الخرسانات', 'حصر كثافات وكميات حديد التسليح', 'الدراسات التفصيلية', 'دراسات بنود تشطيبات'],
     category: 'medical',
+    image: '/images/projects/okasha.jpg',
   },
   {
     id: '8',
@@ -166,6 +173,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Detailed Studies', 'Concrete Quantity Studies', 'Reinforcement Steel Surveying', 'Finishing Works Studies'],
     servicesAr: ['الدراسات التفصيلية', 'دراسات كميات الخرسانات', 'حصر كثافات وكميات حديد التسليح', 'دراسات بنود تشطيبات'],
     category: 'medical',
+    image: '/images/projects/liver-institute.jpg',
   },
 
   // ── Tourism Projects (المشروعات السياحية) ──
@@ -182,6 +190,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Preliminary Studies', 'Economic Feasibility Studies', 'Project Marketing'],
     servicesAr: ['الدراسات الأولية', 'دراسات الجدوى الاقتصادية', 'تسويق المشروع'],
     category: 'tourism',
+    image: '/images/projects/aquatic-district.jpg',
   },
   {
     id: '10',
@@ -196,6 +205,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Detailed Studies', 'Site Coordination Studies', 'Finishing Works Studies'],
     servicesAr: ['الدراسات التفصيلية', 'دراسات بنود تنسيق الموقع', 'دراسات بنود تشطيبات'],
     category: 'tourism',
+    image: '/images/projects/grand-hyatt.jpg',
   },
 
   // ── Feasibility & Market Studies (دراسات الجدوى والسوق) ──
@@ -212,6 +222,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Marketing Plans', 'Market Size Assessment', 'SWOT Analysis', 'Opportunity & Risk Evaluation', 'Marketing Strategy Recommendations', 'Implementation Follow-up'],
     servicesAr: ['إعداد خطط التسويق', 'تقييم مبدئي وتحديد حجم السوق', 'تحليل نقاط الضعف والقوة', 'تقييم الفرص والمخاطر', 'التوصية بالاستراتيجيات التسويقية', 'متابعة التنفيذ وتقييم الخطط التسويقية'],
     category: 'consultancy',
+    image: '/images/projects/feasibility-studies.jpg',
   },
 ];
 
