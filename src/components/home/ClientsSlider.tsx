@@ -11,6 +11,7 @@ const clients = [
   { name: 'EHAF Consulting Engineers', logo: '/images/clients/ehaf.png' },
   { name: 'CGC', logo: '/images/clients/cgc.png' },
   { name: 'Ginza', logo: '/images/clients/ginza.png' },
+  { name: 'Marsellia Group', logo: '/images/clients/marsellia.png' },
 ];
 
 // Double the array for seamless infinite scroll
