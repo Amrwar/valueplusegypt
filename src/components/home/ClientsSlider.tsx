@@ -11,7 +11,7 @@ const clients: { name: string; logo: string; url?: string }[] = [
   { name: 'EHAF Consulting Engineers', logo: '/images/clients/ehaf.png', url: 'https://ehaf.com/' },
   { name: 'CGC', logo: '/images/clients/cgc.png', url: 'https://share.google/1afEpuAL6el5uz0Rd' },
   { name: 'Ginza', logo: '/images/clients/ginza.png', url: 'https://share.google/rx35ObrQd86lr3Dla' },
-  { name: 'Marsellia Group', logo: '/images/clients/marsellia.png', url: 'https://marseilia-group.realestate.eg/saft' },
+  { name: 'Marsellia Group', logo: '/images/clients/marsellia.png', url: 'https://marseilia-group.realestate.eg/' },
   { name: 'ASGC', logo: '/images/clients/asgc.png', url: 'https://share.google/EWyrSg84HFe9VUrqb' },
 ];
 
