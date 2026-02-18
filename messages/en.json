@@ -27,6 +27,10 @@
     "projectsCompleted": "Projects Completed",
     "clientsSatisfied": "Clients Satisfied"
   },
+  "clients": {
+    "title": "Our Clients & Partners",
+    "subtitle": "Trusted by leading companies across Egypt and the Middle East"
+  },
   "cta": {
     "title": "Ready to Start Your Next Project?",
     "description": "Let our team of experts help you make informed investment decisions with comprehensive feasibility studies and market analysis.",
