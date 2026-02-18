@@ -29,6 +29,10 @@ export const SERVICE_ICONS: Record<string, string> = {
   s18: '📉',
 };
 
+export const SERVICE_IMAGES: Record<string, string> = {
+  s2: '/images/services/value-engineering.png',
+};
+
 export const SERVICE_KEYS = [
   's1', 's2', 's3', 's4', 's5', 's6',
   's7', 's8', 's9', 's10', 's11', 's12',
