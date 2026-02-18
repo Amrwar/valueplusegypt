@@ -19,7 +19,7 @@ export default function Footer() {
                 alt="Value Plus"
                 width={130}
                 height={40}
-                className="h-9 w-auto object-contain brightness-0 invert"
+                className="h-9 w-auto object-contain invert mix-blend-screen"
               />
             </div>
             <p className="text-sm text-navy-300 leading-relaxed">
