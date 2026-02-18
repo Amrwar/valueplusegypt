@@ -5,13 +5,14 @@ import Image from 'next/image';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Container from '@/components/ui/Container';
 
-const clients = [
-  { name: 'SIAC Construction', logo: '/images/clients/siac.png' },
-  { name: 'NECA Misr', logo: '/images/clients/neca-misr.png' },
-  { name: 'EHAF Consulting Engineers', logo: '/images/clients/ehaf.png' },
-  { name: 'CGC', logo: '/images/clients/cgc.png' },
-  { name: 'Ginza', logo: '/images/clients/ginza.png' },
-  { name: 'Marsellia Group', logo: '/images/clients/marsellia.png' },
+const clients: { name: string; logo: string; url?: string }[] = [
+  { name: 'SIAC Construction', logo: '/images/clients/siac.png', url: 'https://share.google/IvrZ5djtVb6irgIG5' },
+  { name: 'NECA Misr', logo: '/images/clients/neca-misr.png', url: 'https://necb-misr.net/' },
+  { name: 'EHAF Consulting Engineers', logo: '/images/clients/ehaf.png', url: 'https://ehaf.com/' },
+  { name: 'CGC', logo: '/images/clients/cgc.png', url: 'https://share.google/1afEpuAL6el5uz0Rd' },
+  { name: 'Ginza', logo: '/images/clients/ginza.png', url: 'https://share.google/rx35ObrQd86lr3Dla' },
+  { name: 'Marsellia Group', logo: '/images/clients/marsellia.png', url: 'https://marseilia-group.realestate.eg/saft' },
+  { name: 'ASGC', logo: '/images/clients/asgc.png', url: 'https://share.google/EWyrSg84HFe9VUrqb' },
 ];
 
 // Double the array for seamless infinite scroll
@@ -33,11 +34,8 @@ export default function ClientsSlider() {
 
         {/* Scrolling track */}
         <div className="flex animate-scroll hover:[animation-play-state:paused]">
-          {duplicated.map((client, i) => (
-            <div
-              key={`${client.name}-${i}`}
-              className="flex-shrink-0 px-8"
-            >
+          {duplicated.map((client, i) => {
+            const card = (
               <div className="flex h-24 w-48 items-center justify-center rounded-xl border border-navy-100 bg-white p-4 grayscale transition-all duration-300 hover:grayscale-0 hover:border-gold-400 hover:shadow-md">
                 <Image
                   src={client.logo}
@@ -47,8 +45,19 @@ export default function ClientsSlider() {
                   className="max-h-16 w-auto object-contain"
                 />
               </div>
-            </div>
-          ))}
+            );
+            return (
+              <div key={`${client.name}-${i}`} className="flex-shrink-0 px-8">
+                {client.url ? (
+                  <a href={client.url} target="_blank" rel="noopener noreferrer">
+                    {card}
+                  </a>
+                ) : (
+                  card
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
