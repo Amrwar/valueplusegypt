@@ -32,6 +32,21 @@ export const SERVICE_ICONS: Record<string, string> = {
 export const SERVICE_IMAGES: Record<string, string> = {
   s2: '/images/services/value-engineering.png',
   s3: '/images/services/real-estate-cost-studies.png',
+  s4: '/images/services/cost-control.png',
+  s5: '/images/services/real-estate-marketing.png',
+  s6: '/images/services/business-development.png',
+  s7: '/images/services/economic-consultations.png',
+  s8: '/images/services/quantity-surveying.png',
+  s9: '/images/services/market-study.png',
+  s10: '/images/services/investment-portfolio.png',
+  s11: '/images/services/land-selection.png',
+  s12: '/images/services/marketing-plans.png',
+  s13: '/images/services/eng-supervision.png',
+  s14: '/images/services/real-estate-services.png',
+  s15: '/images/services/real-estate-valuation.png',
+  s16: '/images/services/database-building.png',
+  s17: '/images/services/real-estate-law.png',
+  s18: '/images/services/performance-development.png',
 };
 
 export const SERVICE_KEYS = [
