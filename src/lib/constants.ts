@@ -31,6 +31,7 @@ export const SERVICE_ICONS: Record<string, string> = {
 
 export const SERVICE_IMAGES: Record<string, string> = {
   s2: '/images/services/value-engineering.png',
+  s3: '/images/services/real-estate-cost-studies.png',
 };
 
 export const SERVICE_KEYS = [
