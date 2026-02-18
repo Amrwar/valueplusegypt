@@ -94,6 +94,7 @@ export const PROJECTS: Project[] = [
     servicesEn: ['Quantity Surveying'],
     servicesAr: ['أعمال الحصر للمشروع'],
     category: 'admin-commercial',
+    image: '/images/projects/uni-arc.jpg',
   },
   {
     id: '4',
