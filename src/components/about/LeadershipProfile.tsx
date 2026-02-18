@@ -28,12 +28,13 @@ export default function LeadershipProfile() {
           <div className="flex flex-col md:flex-row">
             {/* Photo */}
             <div className="relative md:w-2/5">
-              <div className="relative h-72 md:h-full md:min-h-[400px]">
+              <div className="relative h-80 md:h-full md:min-h-[420px]">
                 <Image
                   src="/images/president.jpg"
                   alt={t('leaderName')}
                   fill
-                  className="object-cover object-top"
+                  className="object-cover"
+                  style={{ objectPosition: 'center 80%' }}
                 />
                 {/* Gold accent at bottom on mobile, at side on desktop */}
                 <div className="absolute bottom-0 start-0 h-1 w-full bg-gold-400 md:h-full md:w-1 md:bottom-auto md:end-0 md:start-auto" />
