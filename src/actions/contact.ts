@@ -1,12 +1,9 @@
 'use server';
 
 import { Resend } from 'resend';
-import fs from 'fs/promises';
-import path from 'path';
-import { ContactFormState, ContactSubmission } from '@/types';
+import { ContactFormState } from '@/types';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const SUBMISSIONS_PATH = path.join(process.cwd(), 'data', 'submissions.json');
 
 function validateEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -36,36 +33,32 @@ export async function submitContactForm(
     return { success: false, error: '', fieldErrors };
   }
 
-  // Store submission
-  const submission: ContactSubmission = {
-    id: crypto.randomUUID(),
-    name,
-    email,
-    phone,
-    company,
-    service,
-    message,
-    submittedAt: new Date().toISOString(),
-  };
+  const submittedAt = new Date().toISOString();
 
+  // Store submission to file (local dev only — Vercel has read-only filesystem)
   try {
-    // Ensure data directory exists
-    const dataDir = path.dirname(SUBMISSIONS_PATH);
-    await fs.mkdir(dataDir, { recursive: true });
+    const fs = await import('fs/promises');
+    const path = await import('path');
+    const filePath = path.join(process.cwd(), 'data', 'submissions.json');
 
-    // Read existing submissions
-    let submissions: ContactSubmission[] = [];
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+
+    let submissions: unknown[] = [];
     try {
-      const data = await fs.readFile(SUBMISSIONS_PATH, 'utf-8');
+      const data = await fs.readFile(filePath, 'utf-8');
       submissions = JSON.parse(data);
     } catch {
-      // File doesn't exist yet, start with empty array
+      // File doesn't exist yet
     }
 
-    submissions.push(submission);
-    await fs.writeFile(SUBMISSIONS_PATH, JSON.stringify(submissions, null, 2));
-  } catch (err) {
-    console.error('Failed to store submission:', err);
+    submissions.push({
+      id: crypto.randomUUID(),
+      name, email, phone, company, service, message, submittedAt,
+    });
+
+    await fs.writeFile(filePath, JSON.stringify(submissions, null, 2));
+  } catch {
+    // Silently skip on read-only filesystems (Vercel)
   }
 
   // Send email via Resend
@@ -85,12 +78,11 @@ export async function submitContactForm(
           <p><strong>Message:</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
           <hr>
-          <p style="color: #666; font-size: 12px;">Submitted at ${submission.submittedAt}</p>
+          <p style="color: #666; font-size: 12px;">Submitted at ${submittedAt}</p>
         `,
       });
     } catch (err) {
       console.error('Failed to send email:', err);
-      // Don't fail the form submission if email fails
     }
   }
 
