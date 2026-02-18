@@ -42,18 +42,6 @@ export default function HeroSection() {
           'relative mx-auto max-w-3xl text-center transition-all duration-700',
           isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         )}>
-          {/* Logo */}
-          <div className="mx-auto mb-8">
-            <Image
-              src="/images/logo.jpg"
-              alt="Value Plus"
-              width={200}
-              height={60}
-              className="mx-auto h-14 w-auto object-contain invert mix-blend-screen"
-              priority
-            />
-          </div>
-
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             {t('title')}
           </h1>
