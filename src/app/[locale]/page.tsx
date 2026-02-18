@@ -60,6 +60,14 @@ const organizationSchema = {
   description:
     'Leading investment consultancy firm specializing in economic feasibility studies, value engineering, and comprehensive real estate services in Egypt and the Middle East.',
   foundingLocation: { '@type': 'Place', name: 'Cairo, Egypt', hasMap: 'https://maps.app.goo.gl/LDmYysLjwPC4ydKV9' },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Hassan Al-Mamoun St., Al Wafaa WA Al Amal',
+    addressLocality: 'Nasr City',
+    addressRegion: 'Cairo Governorate',
+    postalCode: '4442120',
+    addressCountry: 'EG',
+  },
   areaServed: ['Egypt', 'Middle East'],
   contactPoint: {
     '@type': 'ContactPoint',
