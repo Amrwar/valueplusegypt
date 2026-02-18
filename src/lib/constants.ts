@@ -220,8 +220,8 @@ export const CONTACT_INFO = {
     en: 'Cairo, Egypt',
     ar: 'القاهرة، مصر',
   },
-  email: 'info@valueplusegypt.com',
-  telephone: '+20 2 123 456 789',
-  mobile: '+20 100 123 4567',
+  email: 'valueplusegypt@gmail.com',
+  telephone: '+201223967303',
+  mobile: '+201223967303',
   mapsUrl: 'https://maps.google.com/?q=Cairo,Egypt',
 };
