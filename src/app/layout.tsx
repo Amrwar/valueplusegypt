@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Inter, Cairo } from 'next/font/google';
 import { getLocale } from 'next-intl/server';
@@ -14,6 +15,10 @@ const cairo = Cairo({
   variable: '--font-cairo',
   display: 'swap',
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://www.valuepluseg.org'),
+};
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const locale = await getLocale();

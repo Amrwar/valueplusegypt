@@ -4,12 +4,40 @@ import Container from '@/components/ui/Container';
 import ContactForm from '@/components/contact/ContactForm';
 import ContactInfo from '@/components/contact/ContactInfo';
 
+const BASE_URL = 'https://www.valuepluseg.org';
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata' });
+  const isAr = locale === 'ar';
+
   return {
     title: t('contactTitle'),
     description: t('contactDescription'),
+    keywords: isAr
+      ? ['تواصل مع فاليو بلس مصر', 'فاليو بلس', 'استشارات استثمارية مصر', 'القاهرة']
+      : ['contact Value Plus Egypt', 'ValuePlus Egypt', 'investment consultancy contact Egypt', 'Cairo'],
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/contact`,
+      languages: {
+        'en': `${BASE_URL}/en/contact`,
+        'ar': `${BASE_URL}/ar/contact`,
+      },
+    },
+    openGraph: {
+      title: t('contactTitle'),
+      description: t('contactDescription'),
+      url: `${BASE_URL}/${locale}/contact`,
+      siteName: 'Value Plus Egypt',
+      locale: isAr ? 'ar_EG' : 'en_US',
+      alternateLocale: isAr ? 'en_US' : 'ar_EG',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary',
+      title: t('contactTitle'),
+      description: t('contactDescription'),
+    },
   };
 }
 

@@ -3,12 +3,41 @@ import { getTranslations } from 'next-intl/server';
 import Container from '@/components/ui/Container';
 import ProjectGrid from '@/components/projects/ProjectGrid';
 
+const BASE_URL = 'https://www.valuepluseg.org';
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata' });
+  const isAr = locale === 'ar';
+
   return {
     title: t('projectsTitle'),
     description: t('projectsDescription'),
+    keywords: isAr
+      ? ['مشاريع فاليو بلس مصر', 'فاليو بلس', 'مشاريع استثمارية مصر', 'مشاريع عقارية', 'دراسات جدوى']
+      : ['Value Plus Egypt projects', 'ValuePlus projects', 'investment projects Egypt', 'real estate projects Egypt', 'feasibility studies Egypt'],
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/projects`,
+      languages: {
+        'en': `${BASE_URL}/en/projects`,
+        'ar': `${BASE_URL}/ar/projects`,
+      },
+    },
+    openGraph: {
+      title: t('projectsTitle'),
+      description: t('projectsDescription'),
+      url: `${BASE_URL}/${locale}/projects`,
+      siteName: 'Value Plus Egypt',
+      locale: isAr ? 'ar_EG' : 'en_US',
+      alternateLocale: isAr ? 'en_US' : 'ar_EG',
+      type: 'website',
+      images: [{ url: `${BASE_URL}/images/logo.jpg`, alt: 'Value Plus Egypt Projects' }],
+    },
+    twitter: {
+      card: 'summary',
+      title: t('projectsTitle'),
+      description: t('projectsDescription'),
+    },
   };
 }
 
