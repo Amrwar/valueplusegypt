@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import LanguageSwitcher from './LanguageSwitcher';
 import { cn } from '@/lib/utils';
@@ -25,13 +26,15 @@ export default function Navbar() {
       <Container>
         <nav className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900">
-              <span className="text-lg font-bold text-gold-400">V+</span>
-            </div>
-            <span className="text-lg font-bold text-navy-900">
-              Value Plus
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.jpg"
+              alt="Value Plus"
+              width={130}
+              height={40}
+              className="h-9 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

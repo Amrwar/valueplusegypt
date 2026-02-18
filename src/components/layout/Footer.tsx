@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 
 export default function Footer() {
@@ -12,11 +13,14 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10">
-                <span className="text-lg font-bold text-gold-400">V+</span>
-              </div>
-              <span className="text-lg font-bold text-white">Value Plus</span>
+            <div className="mb-4">
+              <Image
+                src="/images/logo.jpg"
+                alt="Value Plus"
+                width={130}
+                height={40}
+                className="h-9 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-sm text-navy-300 leading-relaxed">
               {t('footer.description')}
