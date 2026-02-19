@@ -72,6 +72,7 @@ export default function ContactInfo() {
               {item.href ? (
                 <a
                   href={item.href}
+                  dir={item.href.startsWith('tel:') ? 'ltr' : undefined}
                   className="text-white hover:text-gold-400 transition-colors"
                 >
                   {item.value}

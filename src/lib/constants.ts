@@ -254,7 +254,7 @@ export const CONTACT_INFO = {
     ar: 'أبراج زاهر، بجوار المنطقة الحرة، شارع حسن المأمون، مدينة نصر',
   },
   email: 'valueplusegypt@gmail.com',
-  telephone: '+201223967303',
-  mobile: '+201223967303',
+  telephone: '+206666868155',
+  mobile: '+206666868155',
   mapsUrl: 'https://maps.app.goo.gl/LDmYysLjwPC4ydKV9',
 };
