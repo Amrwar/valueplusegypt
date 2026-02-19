@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t('aboutDescription'),
     keywords: isAr
       ? ['شريف الصفطاوي', 'شريف سعيد الصفطاوي', 'د. م. شريف الصفطاوي', 'فاليو بلس مصر', 'فاليو بلس', 'استشارات استثمارية مصر']
-      : ['Sherif El Saftawy', 'Sherif Said El Saftawy', 'Dr Sherif El Saftawy', 'Value Plus Egypt', 'ValuePlus Egypt', 'ValuePlus', 'investment consultancy Egypt'],
+      : ['Sherif El Saftawy', 'Sherif El Saftawy', 'Dr Sherif El Saftawy', 'Value Plus Egypt', 'ValuePlus Egypt', 'ValuePlus', 'investment consultancy Egypt'],
     alternates: {
       canonical: `${BASE_URL}/${locale}/about`,
       languages: {
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       images: [
         {
           url: `${BASE_URL}/images/logo.jpg`,
-          alt: 'Value Plus Egypt — Dr. Eng. Sherif Said El Saftawy',
+          alt: 'Value Plus Egypt — Dr. Eng. Sherif El Saftawy',
         },
       ],
     },
@@ -50,10 +50,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Dr. Eng. Sherif Said El Saftawy',
+  name: 'Dr. Eng. Sherif El Saftawy',
   alternateName: [
     'Sherif El Saftawy',
-    'Sherif Said El Saftawy',
+    'Sherif El Saftawy',
     'شريف الصفطاوي',
     'شريف سعيد الصفطاوي',
     'د. م. شريف الصفطاوي',
@@ -61,7 +61,7 @@ const personSchema = {
   ],
   jobTitle: 'President & General Manager',
   description:
-    'Dr. Eng. Sherif Said El Saftawy is the President & General Manager of Value Plus Egypt, with extensive experience in investment consultancy, engineering, and real estate development.',
+    'Dr. Eng. Sherif El Saftawy is the President & General Manager of Value Plus Egypt, with extensive experience in investment consultancy, engineering, and real estate development.',
   worksFor: {
     '@type': 'Organization',
     name: 'Value Plus Egypt',

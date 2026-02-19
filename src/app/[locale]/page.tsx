@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t('homeDescription'),
     keywords: isAr
       ? ['فاليو بلس مصر', 'فاليو بلس', 'شريف الصفطاوي', 'شريف سعيد الصفطاوي', 'دراسات جدوى اقتصادية', 'هندسة القيمة', 'استشارات استثمارية', 'خدمات عقارية', 'مصر']
-      : ['Value Plus Egypt', 'ValuePlus Egypt', 'ValuePlus', 'Sherif El Saftawy', 'Sherif Said El Saftawy', 'feasibility studies Egypt', 'value engineering', 'investment consultancy Egypt', 'real estate services Egypt'],
+      : ['Value Plus Egypt', 'ValuePlus Egypt', 'ValuePlus', 'Sherif El Saftawy', 'Sherif El Saftawy', 'feasibility studies Egypt', 'value engineering', 'investment consultancy Egypt', 'real estate services Egypt'],
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
       languages: {
@@ -76,10 +76,10 @@ const organizationSchema = {
   },
   founder: {
     '@type': 'Person',
-    name: 'Dr. Eng. Sherif Said El Saftawy',
+    name: 'Dr. Eng. Sherif El Saftawy',
     alternateName: [
       'Sherif El Saftawy',
-      'Sherif Said El Saftawy',
+      'Sherif El Saftawy',
       'شريف الصفطاوي',
       'شريف سعيد الصفطاوي',
       'د. م. شريف الصفطاوي',

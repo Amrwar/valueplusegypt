@@ -7,9 +7,9 @@ import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/utils';
 
 const stats = [
-  { value: '15+', key: 'yearsExperience' },
+  { value: '45+', key: 'yearsExperience' },
   { value: '200+', key: 'projectsCompleted' },
-  { value: '150+', key: 'clientsSatisfied' },
+  { value: '50+', key: 'clientsSatisfied' },
 ];
 
 export default function AboutPreview() {
