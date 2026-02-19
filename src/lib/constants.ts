@@ -250,8 +250,8 @@ export const PROJECTS: Project[] = [
 
 export const CONTACT_INFO = {
   address: {
-    en: 'Hassan Al-Mamoun St., Al Wafaa WA Al Amal, Nasr City, Cairo Governorate 4442120',
-    ar: 'حسن المأمون، الوفاء والأمل، مدينة نصر، محافظة القاهرة 4442120',
+    en: 'Zaher Towers, next to the Free Zone, Hassan Al-Mamoun St., Nasr City, Cairo',
+    ar: 'أبراج زاهر، بجوار المنطقة الحرة، شارع حسن المأمون، مدينة نصر',
   },
   email: 'valueplusegypt@gmail.com',
   telephone: '+201223967303',

@@ -62,10 +62,9 @@ const organizationSchema = {
   foundingLocation: { '@type': 'Place', name: 'Cairo, Egypt', hasMap: 'https://maps.app.goo.gl/LDmYysLjwPC4ydKV9' },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Hassan Al-Mamoun St., Al Wafaa WA Al Amal',
+    streetAddress: 'Zaher Towers, next to the Free Zone, Hassan Al-Mamoun St.',
     addressLocality: 'Nasr City',
     addressRegion: 'Cairo Governorate',
-    postalCode: '4442120',
     addressCountry: 'EG',
   },
   areaServed: ['Egypt', 'Middle East'],
