@@ -70,7 +70,7 @@ const organizationSchema = {
   areaServed: ['Egypt', 'Middle East'],
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+206666868155',
+    telephone: '+201223967303',
     email: 'valueplusegypt@gmail.com',
     contactType: 'customer service',
   },
