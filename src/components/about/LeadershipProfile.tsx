@@ -33,7 +33,7 @@ export default function LeadershipProfile() {
                   src="/images/president.png"
                   alt={t('leaderName')}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 {/* Gold accent at bottom on mobile, at side on desktop */}
                 <div className="absolute bottom-0 start-0 h-1 w-full bg-gold-400 md:h-full md:w-1 md:bottom-auto md:end-0 md:start-auto" />

@@ -33,8 +33,13 @@
 }
 
 /* Base styles */
+html {
+  overflow-x: hidden;
+}
+
 body {
   @apply bg-white text-navy-900 antialiased;
+  overflow-x: hidden;
 }
 
 /* RTL adjustments for Arabic */
