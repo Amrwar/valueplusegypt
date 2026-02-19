@@ -13,6 +13,10 @@ const clients: { name: string; logo: string; url?: string }[] = [
   { name: 'Ginza', logo: '/images/clients/ginza.png', url: 'https://share.google/rx35ObrQd86lr3Dla' },
   { name: 'Marsellia Group', logo: '/images/clients/marsellia.png', url: 'https://marseilia-group.realestate.eg/' },
   { name: 'ASGC', logo: '/images/clients/asgc.png', url: 'https://share.google/EWyrSg84HFe9VUrqb' },
+  { name: 'Chipsy', logo: '/images/clients/chipsy.jpeg' },
+  { name: 'Pee', logo: '/images/clients/pee.jpeg' },
+  { name: 'Housing & Development Real Estate Investment', logo: '/images/clients/housing-dev.jpeg' },
+  { name: 'LEONI', logo: '/images/clients/leoni.jpeg' },
 ];
 
 // Double the array for seamless infinite scroll
