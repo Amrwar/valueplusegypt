@@ -48,16 +48,16 @@ export default function AboutPreview() {
             'transition-all duration-700 delay-200',
             isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
           )}>
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6">
               {stats.map((stat) => (
                 <div
                   key={stat.key}
-                  className="rounded-xl bg-white p-6 text-center shadow-sm"
+                  className="rounded-xl bg-white p-3 text-center shadow-sm sm:p-6"
                 >
-                  <div className="text-3xl font-bold text-gold-400">
+                  <div className="text-xl font-bold text-gold-400 sm:text-3xl">
                     {stat.value}
                   </div>
-                  <div className="mt-1 text-sm font-medium text-navy-600">
+                  <div className="mt-1 text-xs font-medium text-navy-600 sm:text-sm">
                     {t(stat.key)}
                   </div>
                 </div>

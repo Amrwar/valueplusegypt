@@ -31,13 +31,13 @@ export default function ProjectGrid() {
   return (
     <div>
       {/* Filter buttons */}
-      <div className="mb-10 flex flex-wrap justify-center gap-2">
+      <div className="mb-10 flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:justify-center sm:overflow-visible sm:pb-0">
         {PROJECT_CATEGORIES.map((cat) => (
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
             className={cn(
-              'rounded-full px-4 py-2 text-sm font-medium transition-colors',
+              'flex-shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors',
               activeCategory === cat
                 ? 'bg-navy-900 text-white'
                 : 'bg-navy-50 text-navy-600 hover:bg-navy-100'

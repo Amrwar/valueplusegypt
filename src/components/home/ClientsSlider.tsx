@@ -37,10 +37,10 @@ export default function ClientsSlider() {
         <div className="pointer-events-none absolute inset-y-0 end-0 z-10 w-24 bg-gradient-to-l from-white to-transparent" />
 
         {/* Scrolling track */}
-        <div className="flex animate-scroll hover:[animation-play-state:paused]">
+        <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
           {duplicated.map((client, i) => {
             const card = (
-              <div className="flex h-24 w-48 items-center justify-center rounded-xl border border-navy-100 bg-white p-4 grayscale transition-all duration-300 hover:grayscale-0 hover:border-gold-400 hover:shadow-md">
+              <div className="flex h-20 w-36 items-center justify-center rounded-xl border border-navy-100 bg-white p-3 grayscale transition-all duration-300 hover:grayscale-0 hover:border-gold-400 hover:shadow-md sm:h-24 sm:w-48 sm:p-4">
                 <Image
                   src={client.logo}
                   alt={client.name}
@@ -51,7 +51,7 @@ export default function ClientsSlider() {
               </div>
             );
             return (
-              <div key={`${client.name}-${i}`} className="flex-shrink-0 px-8">
+              <div key={`${client.name}-${i}`} className="flex-shrink-0 px-4 sm:px-8">
                 {client.url ? (
                   <a href={client.url} target="_blank" rel="noopener noreferrer">
                     {card}
