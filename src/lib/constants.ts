@@ -255,6 +255,6 @@ export const CONTACT_INFO = {
   },
   email: 'valueplusegypt@gmail.com',
   telephone: '+201223967303',
-  mobile: '+206666868155',
+  mobile: '+201558686666',
   mapsUrl: 'https://maps.app.goo.gl/LDmYysLjwPC4ydKV9',
 };
