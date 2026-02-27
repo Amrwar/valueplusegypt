@@ -253,7 +253,7 @@ export const CONTACT_INFO = {
     en: 'Zaher Towers, next to the Free Zone, Hassan Al-Mamoun St., Nasr City, Cairo',
     ar: 'أبراج زاهر، بجوار المنطقة الحرة، شارع حسن المأمون، مدينة نصر',
   },
-  email: 'valueplusegypt@gmail.com',
+  email: 'contact@valuepluseg.org',
   telephone: '+201223967303',
   mobile: '+201558686666',
   mapsUrl: 'https://maps.app.goo.gl/LDmYysLjwPC4ydKV9',
