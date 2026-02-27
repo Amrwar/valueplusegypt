@@ -7,7 +7,7 @@ import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/utils';
 
 const stats = [
-  { value: '45+', key: 'yearsExperience' },
+  { value: '40+', key: 'yearsExperience' },
   { value: '200+', key: 'projectsCompleted' },
   { value: '50+', key: 'clientsSatisfied' },
 ];
