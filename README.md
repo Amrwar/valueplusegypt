@@ -12,8 +12,12 @@ Built with **Next.js 16**, **Tailwind CSS 4**, and **next-intl** for full intern
 - Filterable project portfolio
 - 18 service categories with dedicated cards
 - Responsive design for all screen sizes
-- SEO metadata on all pages
+- SEO metadata on all pages, including dynamic sitemap entries
 - Scroll-based animations
+- SQLite-backed CRM: lead pipeline, prioritized consultation requests,
+  property listings, an insights/blog CMS, testimonial moderation, and
+  double opt-in newsletter subscriptions
+- Session-authenticated `/admin` dashboard for managing all of the above
 
 ## Getting Started
 
@@ -41,6 +45,20 @@ cp .env.example .env.local
 | `RESEND_API_KEY` | Your Resend API key for sending emails |
 | `RESEND_FROM_EMAIL` | Email address to send from |
 | `CONTACT_EMAIL` | Email address to receive contact submissions |
+| `DATABASE_PATH` | Path to the SQLite database file used by the CRM (defaults to `./data/crm.db`) |
+| `SEED_ADMIN_EMAIL` | Email for the admin account created by `npm run db:seed` |
+| `SEED_ADMIN_PASSWORD` | Password for the seeded admin account |
+
+### Database
+
+The CRM (leads, consultation requests, properties, insights, testimonials,
+newsletter subscribers) is backed by a local SQLite database. The schema is
+applied automatically on first connection. To create an admin account and
+seed sample content for local development:
+
+```bash
+npm run db:seed
+```
 
 ### Development
 
@@ -48,7 +66,13 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — you'll be redirected to `/en` or `/ar`.
+Open [http://localhost:3000](http://localhost:3000) — you'll be redirected to `/en` or `/ar`. The admin dashboard is available at `/admin` (not locale-prefixed).
+
+### Tests
+
+```bash
+npm test
+```
 
 ### Build
 
@@ -61,14 +85,16 @@ npm start
 
 ```
 ├── messages/           # Translation files (en.json, ar.json)
-├── data/               # Contact form submissions (JSON)
-├── middleware.ts        # next-intl locale detection
+├── data/               # Contact form submissions (JSON) + SQLite database
+├── scripts/            # db:seed script
+├── middleware.ts        # next-intl locale detection (excludes /admin)
 └── src/
     ├── i18n/           # Internationalization config
-    ├── lib/            # Constants, utilities
+    ├── lib/            # Constants, utilities, db client, auth, rate limiting
+    ├── models/         # SQLite-backed repositories (leads, properties, insights, ...)
     ├── types/          # TypeScript interfaces
     ├── hooks/          # Custom React hooks
-    ├── actions/        # Server actions (contact form)
+    ├── actions/        # Server actions (contact form, CRM forms, admin mutations)
     ├── components/     # React components
     │   ├── layout/     # Navbar, Footer, LanguageSwitcher
     │   ├── ui/         # Button, Container, SectionHeading
@@ -76,9 +102,13 @@ npm start
     │   ├── services/   # ServiceCard, ServicesGrid
     │   ├── about/      # CompanyInfo, LeadershipProfile
     │   ├── projects/   # ProjectGrid, ProjectCard
-    │   └── contact/    # ContactForm, ContactInfo, MapLink
+    │   ├── contact/    # ContactForm, ContactInfo, MapLink
+    │   ├── consultation/, properties/, insights/, testimonials/, newsletter/
+    │   └── admin/      # Admin dashboard components
     └── app/
-        └── [locale]/   # Locale-based routing (en, ar)
+        ├── [locale]/   # Locale-based public routing (en, ar)
+        ├── admin/      # Session-gated admin dashboard (not locale-prefixed)
+        └── api/        # Public + admin REST endpoints
 ```
 
 ## Pages
@@ -89,7 +119,12 @@ npm start
 | `/[locale]/services` | All 18 service categories |
 | `/[locale]/about` | Company info, leadership, why choose us |
 | `/[locale]/projects` | Filterable project portfolio |
+| `/[locale]/properties` | Browsable property listings |
+| `/[locale]/insights` | Insights/blog |
+| `/[locale]/consultation` | Request a consultation |
+| `/[locale]/testimonials` | Client testimonials + submission form |
 | `/[locale]/contact` | Contact form + company info |
+| `/admin` | Admin dashboard (leads, consultations, properties, insights, testimonials, newsletter) |
 
 ## Deploy to Vercel
 
