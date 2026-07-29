@@ -32,12 +32,20 @@ export default function CTASection() {
             <p className="mx-auto mt-4 max-w-2xl text-lg text-navy-200">
               {t('description')}
             </p>
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center rounded-lg bg-gold-400 px-8 py-3.5 text-base font-semibold text-navy-950 transition-colors hover:bg-gold-300"
-            >
-              {t('button')}
-            </Link>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-lg bg-gold-400 px-8 py-3.5 text-base font-semibold text-navy-950 transition-colors hover:bg-gold-300"
+              >
+                {t('button')}
+              </Link>
+              <Link
+                href="/consultation"
+                className="inline-flex items-center rounded-lg border-2 border-gold-400 px-8 py-3.5 text-base font-semibold text-gold-400 transition-colors hover:bg-gold-400 hover:text-navy-950"
+              >
+                {t('consultationButton')}
+              </Link>
+            </div>
           </div>
         </div>
       </Container>

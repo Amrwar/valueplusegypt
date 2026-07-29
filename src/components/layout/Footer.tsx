@@ -1,16 +1,18 @@
-import { useTranslations } from 'next-intl';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
+import NewsletterForm from '@/components/newsletter/NewsletterForm';
 
-export default function Footer() {
-  const t = useTranslations();
+export default async function Footer() {
+  const t = await getTranslations();
+  const locale = await getLocale();
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-navy-900 text-navy-100">
       <Container className="py-12">
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-4">
           {/* Brand */}
           <div>
             <div className="mb-4">
@@ -38,6 +40,9 @@ export default function Footer() {
                 { href: '/services' as const, label: t('nav.services') },
                 { href: '/about' as const, label: t('nav.about') },
                 { href: '/projects' as const, label: t('nav.projects') },
+                { href: '/properties' as const, label: t('nav.properties') },
+                { href: '/insights' as const, label: t('nav.insights') },
+                { href: '/testimonials' as const, label: t('testimonials.sectionTitle') },
                 { href: '/contact' as const, label: t('nav.contact') },
               ].map((link) => (
                 <li key={link.href}>
@@ -78,6 +83,15 @@ export default function Footer() {
                 <span dir="ltr">{t('contact.telephoneValue')}</span>
               </li>
             </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gold-400">
+              {t('newsletter.title')}
+            </h3>
+            <p className="mb-4 text-sm text-navy-300">{t('newsletter.description')}</p>
+            <NewsletterForm locale={locale} />
           </div>
         </div>
 
